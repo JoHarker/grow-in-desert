@@ -1,5 +1,5 @@
-# Grow in desert
-It is a small Minecraft modification that gives players ability to get wood in desert. Just use bone meal on  dead bush to get acacia sapling.
+# Grow in desert v1.12-0.2
+It is a small Minecraft modification that gives players ability to get wood in desert. Just use bone meal on dead bush and with great chance you will get the acacia sapling
 
 ## Getting Started
 This modification was developed with forge version 1.12-14.21.0.2367. You need to download forge mdk from [forge official site](https://files.minecraftforge.net/) and unzip this. After that execute command (for windows):
@@ -27,6 +27,7 @@ gradlew build
 v*XXX-YYY* (where *X* - minecraft version supported and *Y* - version of mod): 
 * v1.12-0.1 (stable) - using bone meal on dead bush to transform it to the acacia sapling. After that 
 sand under the bush replacing by dirt block.
+* v1.12-0.2 (stable) - random check to using bone meal on dead bush, mod description and logo
 
 ## Autors
 * JoHarker (Igor Vilhovy).
