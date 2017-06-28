@@ -1,4 +1,4 @@
-package com.jharker.growindesert;
+package joharker.growindesert;
 
 import net.minecraftforge.fml.common.Mod;
 
@@ -6,5 +6,7 @@ import net.minecraftforge.fml.common.Mod;
 public class GrowInDesertMod
 {
 	public static final String MODID = "growindesert";
-	public static final String VERSION = "0.1";
+	public static final String VERSION = "0.4";
+	
+	public static final float CHANCE_TO_GROWING = 0.05f;
 }
