@@ -1,0 +1,16 @@
+[
+{
+  "modid": "growindesert",
+  "name": "Grow in desert",
+  "description": "",
+  "version": "0.1",
+  "mcversion": "1.12",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["JoHarker"],
+  "credits": "My family.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
