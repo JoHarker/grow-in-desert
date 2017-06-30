@@ -9,7 +9,7 @@
   "updateUrl": "",
   "authorList": ["JoHarker"],
   "credits": "My family and friends.",
-  "logoFile": "/logo.png",
+  "logoFile": "logo.png",
   "screenshots": [],
   "dependencies": []
 }
