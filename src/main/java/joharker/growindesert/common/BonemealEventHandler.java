@@ -44,7 +44,6 @@ public class BonemealEventHandler
 								if (event.getWorld().getBlockState(pos).getBlock() == Blocks.WATER)
 								{
 									countBlocks++;
-									System.out.println(pos.getX() + " " + pos.getY() + " " + pos.getZ());
 								}
 							}
 							pos = pos.add(0, 0, -AREA_HEIGHT);

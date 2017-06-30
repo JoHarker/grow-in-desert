@@ -2,7 +2,7 @@
 {
   "modid": "growindesert",
   "name": "Grow in desert",
-  "description": "This modification gives players ability to get wood in desert. Just use bone meal on  dead bush to get sapling.",
+  "description": "This modification gives players ability to get wood in desert. Just use bone meal on dead bush and with great chance you will get the acacia sapling. Water sources near increase this chance.",
   "version": "0.3",
   "mcversion": "1.12",
   "url": "https://github.com/JoHarker/grow-in-desert",
