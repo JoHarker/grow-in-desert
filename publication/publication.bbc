@@ -1,0 +1,65 @@
+[img]http://i.imgur.com/MXeaCKD.png[/img]
+
+[right]Latest release is v1.12-0.3[/right]
+[header=2]Short description[/header]
+[p]It is a small modification that gives players ability to get wood in desert. Just use bone meal on a dead bush and with different chances you will get the acacia sapling, tall grass, fern or that might not work. So prepare 10-12 bones or increase your chances by finding the dead bush with water sources near.[/p]
+[p]This modification, in the first instance, is applicable to worlds with "large biomes" option enabled. In that case spawn in the desert may occur and there is no sense staying here without the wood. Also you can trye to create world with one desert biome only, it is fun :) .[/p]
+
+[p][color=#808080]Offtop:[/color] I am trying be adherent of strategy to discovering the new sides of standart minecraft mechanics. I thought about adding new kind of tree for mod purposes, something like small leafless tree but I still doubt. New tree require new wood planks and new wood planks require new doors, boats, etc. Why do we need it? There is a lot of modification that adds many new kinds of trees and usually this logical not compatible to each other because autors don't think about other mods that may add trees. Or I get wrong? Well, the long story short, in new updates I decide to add config. It will give the ability for players choosing saplings from other mods and setting probability that bone meal will take effect. What do you think about this?[/p]
+
+[p][color=#808080]Offtop:[/color] What associations does the modification name evokes? Does it evoke only an ideas about growth of plants or maybe it evokes some ideas about the players growth in the wilderness? I am asking because I plan to add some features not related to plants. Please [color=#000080]write[/color] what do you thinking in the comments.[/p]
+
+[header=2]Screenshots[/header]
+[spoiler]
+[img]http://i.imgur.com/8droxGL.png[/img]
+[img]http://i.imgur.com/fuzocM7.png[/img]
+[img]http://i.imgur.com/rHmTfD7.png[/img]
+[img]http://i.imgur.com/piWrrOc.png[/img]
+[img]http://i.imgur.com/PMq5Nqw.png[/img]
+[img]http://i.imgur.com/6hFr1xl.png[/img]
+[/spoiler]
+
+[header=2]Download[/header]
+[p]Latest version v[i]1.12-0.3[/i] available: [url=https://cdn.rawgit.com/JoHarker/grow-in-desert/d80fa15c/binaries/growindesert-1.12-0.3.jar]download[/url][/p]
+
+[header=2]Instalation guide[/header]
+[p]This modification was developed with forge version 1.12-14.21.0.2367, but it works fine with other forge versions for minecraft 1.12. If you have not yet install forge, download this from [url=http://files.minecraftforge.net/]official site[/url] and install to your minecraft client. After that copy modification jar file to .minecraft/mods folder. Quite simple ^_^ .[/p]
+
+[header=2]Detailed description[/header]
+Growth algorithm working is quite simple: [numList]
+[*] Click on dead bush with bone meal in the hand.
+[*] If near located water blocks:
+
+- increase chance that bone meal will take effect,
+- increase chance that result will be sapling.
+[*] Random check for success of growth:
+
+- if failed then takes one bone meal from player and exit.
+[*] Replace block under bush by grass block.
+[*] Replace dead bush by acacia sapling, tall grass or fern depending on plants probabilities.
+[*] Takes one bone meal from player.
+[/numList]
+There is several constants:
+[list]
+[*] Chance that bone meal will take effect ~ 10%,
+[*] Increment of chance related to count of water blocks near. This constant is calculated based on number of blocks needed to absolute chance. It is 10 blocks.
+[*] Chance that result will be sapling ~ 30% (the remaind probability divides between tall grass and fern)
+[*] Increment of chance for getting sapling, related to count of water blocks. It is ~ +10% per block.
+[/list]
+[p]Explanation how works calculation for increase chance:
+Calculation for increasing probability to getting sapling is very simple: one water block gives static % increment (linear function), in contrast, calculation for action in total is little bit harder. It uses square root function for better smoothing of relation between chance and count of water blocks. n-blocks gives increment is equal to product of &#8730;n to some constant. As sayed above, this constant calculated to bring 10 blocks gives absolute chance.[/p]
+[p]I think it more interested solution than it could be. You can compare [url=https://www.wolframalpha.com/input/?i=sqrt(n),+n+for+n+from+0+to+10]graphics[/url]. And see below screenshot - example of dead bush with absolute chance.[/p]
+[spoiler]
+[img]http://i.imgur.com/xzEx423.png[/img]
+[/spoiler]
+
+[header=2]Versions[/header]
+v[i]XXX-YYY[/i] (where [i]X[/i] - minecraft version supported and [i]Y[/i] - version of mod): 
+[list]
+[*]v[i]1.12-0.3[/i] - Dead bush transforms not only to acacia sapling. With different chances it can be - grass or fern. Now, block under the bush replaces by grass block. Water blocks in area of 9x9x2 with dead bush in center increase probability to growing will take effect. Using square root function to better smooth of relation - number of water blocks ~ chance to growing (10 water blocks gets absolute chance). Also water increase chance of getting acacia. Fixed issue - mod logo are not loading.
+[*]v[i]1.12-0.2[/i] - Random check to using bone meal on dead bush, mod description and logo.
+[*]v[i]1.12-0.1[/i] - Using bone meal on dead bush to transform it to the acacia sapling. After that 
+sand under the bush replacing by dirt block.
+[/list]
+[header=2]Contribute[/header]
+[p]If you have ideas about mod feel free contact me. You can write in this thread or in P.M. Also it have open repository on github you are welcome to create an Issue or open a Pull Request. Link to Github repository: [url=https://github.com/JoHarker/grow-in-desert]grow-in-desert[/url].[/p]
