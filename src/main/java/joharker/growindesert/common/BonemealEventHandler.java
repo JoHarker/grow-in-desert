@@ -13,7 +13,7 @@ import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.BlockTallGrass;
 import net.minecraft.block.state.IBlockState;
-import joharker.growindesert.Constants;
+import joharker.growindesert.DefaultValues;
 
 @Mod.EventBusSubscriber
 public class BonemealEventHandler
@@ -55,20 +55,21 @@ public class BonemealEventHandler
 					growingChanceIncrease =
 							// Using square root function to better smooth
 							// of relation - number of water blocks to chance
-							(float) (Constants.CHANCE_INCREMENT_WITH_WATER__GROWING * Math.sqrt(countBlocks));
+							(float) (DefaultValues.DEAD_BUSH.CHANCE_INCREMENT_WITH_WATER__GROWING * Math.sqrt(countBlocks));
 
 					saplingChanceIncrease = // Using linear function. One block add constant value
-							Constants.CHANCE_INCREMENT_WITH_WATER__SAPLING * countBlocks;
+							DefaultValues.DEAD_BUSH.CHANCE_INCREMENT_WITH_WATER__SAPLING * countBlocks;
 				}
 
 				Random r = new Random();
 				// Growing random check
-				if (r.nextFloat() < Constants.CHANCE_TO_GROWING + growingChanceIncrease)
+				if (r.nextFloat() < DefaultValues.DEAD_BUSH.CHANCE_TO_GROWING + growingChanceIncrease)
 				{
 					IBlockState plant;
-					float saplingChance = Constants.CHANCE_TO_GROWING_SAPLING + saplingChanceIncrease;
+					float saplingChance = DefaultValues.DEAD_BUSH.CHANCE_TO_GROWING_SAPLING + saplingChanceIncrease;
 					float grassChance = (1.0f - saplingChance) / 2.0f;
 					// fernChance = remain probability
+					
 					// Plants random check
 					float randomCheck = r.nextFloat();
 					if (randomCheck < saplingChance)

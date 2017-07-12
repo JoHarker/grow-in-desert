@@ -8,10 +8,10 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Constants.MODID, version = Constants.VERSION)
+@Mod(modid = DefaultValues.MODID, version = DefaultValues.VERSION)
 public class GrowInDesertMod
 {
-	@SidedProxy(modId = Constants.MODID, 
+	@SidedProxy(modId = DefaultValues.MODID, 
 			serverSide = "joharker.growindesert.common.CommonProxy", 
 			clientSide = "joharker.growindesert.client.ClientProxy")
 	public static CommonProxy proxy;

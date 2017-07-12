@@ -1,6 +1,6 @@
 package joharker.growindesert.client;
 
-import joharker.growindesert.Constants;
+import joharker.growindesert.DefaultValues;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.color.IBlockColor;
 import net.minecraft.util.math.BlockPos;
@@ -14,7 +14,7 @@ public class WoodColorizer implements IBlockColor
     	if (worldIn != null && pos != null
     			&& worldIn.getBiome(pos).getTemperature() >= 2.0f)
         {
-    		return Constants.WOOD_COLOR_MULTIPLIER.getRGB();
+    		return DefaultValues.WOOD_COLOR_MULTIPLIER.getRGB();
         }
     	else
     		return -1;
