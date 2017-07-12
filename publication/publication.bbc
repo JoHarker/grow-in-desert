@@ -1,32 +1,29 @@
 [img]http://i.imgur.com/MXeaCKD.png[/img]
 
-[right]Latest release is v1.12-0.3[/right]
+[right]Latest release is v1.12-0.4[/right]
 [header=2]Short description[/header]
 [p]It is a small modification that gives players ability to get wood in desert. Just use bone meal on a dead bush and with different chances you will get the acacia sapling, tall grass, fern or that might not work. So prepare 10-12 bones or increase your chances by finding the dead bush with water sources near.[/p]
 [p]This modification, in the first instance, is applicable to worlds with "large biomes" option enabled. In that case spawn in the desert may occur and there is no sense staying here without the wood. Also you can trye to create world with one desert biome only, it is fun :) .[/p]
 
-[p][color=#808080]Offtop:[/color] I am trying be adherent of strategy to discovering the new sides of standart minecraft mechanics. I thought about adding new kind of tree for mod purposes, something like small leafless tree but I still doubt. New tree require new wood planks and new wood planks require new doors, boats, etc. Why do we need it? There is a lot of modification that adds many new kinds of trees and usually this logical not compatible to each other because autors don't think about other mods that may add trees. Or I get wrong? Well, the long story short, in new updates I decide to add config. It will give the ability for players choosing saplings from other mods and setting probability that bone meal will take effect. What do you think about this?[/p]
-
-[p][color=#808080]Offtop:[/color] What associations does the modification name evokes? Does it evoke only an ideas about growth of plants or maybe it evokes some ideas about the players growth in the wilderness? I am asking because I plan to add some features not related to plants. Please [color=#000080]write[/color] what do you thinking in the comments.[/p]
+[p]In new release [color=#000080]v1.12-0.4[/color] using the bone meal on grass block (additionally to the vanilla grass block mechanics) you may get sapling related to the current biome temperature. Also added [color=#ff0000]c[/color][color=#ff9900]o[/color][color=#ffff00]l[/color][color=#00ff00]o[/color][color=#3366ff]r[/color][color=#000080]i[/color][color=#ff00ff]z[/color][color=#800080]e[/color] of the wood blocks placed in the desert to dry colors. Just look at screenshots.[/p]
 
 [header=2]Screenshots[/header]
 [spoiler]
-[img]http://i.imgur.com/8droxGL.png[/img]
-[img]http://i.imgur.com/fuzocM7.png[/img]
-[img]http://i.imgur.com/rHmTfD7.png[/img]
-[img]http://i.imgur.com/piWrrOc.png[/img]
-[img]http://i.imgur.com/PMq5Nqw.png[/img]
-[img]http://i.imgur.com/6hFr1xl.png[/img]
+[img]http://i.imgur.com/wBUdFBF.png[/img]
+[img]http://i.imgur.com/jjAm7YJ.png[/img]
+[img]http://i.imgur.com/SQkFHWw.png[/img]
+[img]http://i.imgur.com/MKArGxa.png[/img]
+[img]http://i.imgur.com/kKWVdPz.png[/img]
 [/spoiler]
 
 [header=2]Download[/header]
-[p]Latest version v[i]1.12-0.3[/i] available: [url=https://cdn.rawgit.com/JoHarker/grow-in-desert/d80fa15c/binaries/growindesert-1.12-0.3.jar]download[/url][/p]
+[p]Latest version v[i]1.12-0.4[/i] available: [url=https://cdn.rawgit.com/JoHarker/grow-in-desert/52b778b4/binaries/growindesert-1.12-0.4.jar]download[/url][/p] - v[i]1.12-0.3[/i] -> [url=https://cdn.rawgit.com/JoHarker/grow-in-desert/d80fa15c/binaries/growindesert-1.12-0.3.jar]link[/url] 
 
 [header=2]Instalation guide[/header]
-[p]This modification was developed with forge version 1.12-14.21.0.2367, but it works fine with other forge versions for minecraft 1.12. If you have not yet install forge, download this from [url=http://files.minecraftforge.net/]official site[/url] and install to your minecraft client. After that copy modification jar file to .minecraft/mods folder. Quite simple ^_^ .[/p]
+[p]This modification was developed with forge version 1.12-14.21.0.2367. Use latest stable version of forge for minecraft v1.12 and all things will work fine. If you have not yet install forge, download this from [url=http://files.minecraftforge.net/]official site[/url] and install to your minecraft client. After that copy modification jar file to .minecraft/mods folder. Quite simple ^_^ . If you stick with any problem with mod please contact me.[/p]
 
-[header=2]Detailed description[/header]
-Growth algorithm working is quite simple: [numList]
+[header=2]Detailed description[/header][spoiler]
+[header=6]The dead bush growth[/header]Growth algorithm working is quite simple: [numList]
 [*] Click on dead bush with bone meal in the hand.
 [*] If near located water blocks:
 
@@ -52,10 +49,25 @@ Calculation for increasing probability to getting sapling is very simple: one wa
 [spoiler]
 [img]http://i.imgur.com/xzEx423.png[/img]
 [/spoiler]
+[header=6]Using bone meal on grass block[/header]As we know using bone meal on grass block cause sprouting tall grass around the block. With some chance there may appears several flowers related to the biome. Modification add saplings to the list of the "flowers" of the biomes using the temperature to determine which saplings will be added (you can retrieve biom temperature info in [url=http://minecraft.gamepedia.com/Biome]wiki[/url]). 
+I analyzed the vanilla trees and biomes temperatures where this trees is generates.  So, when you use bone meal and the Random decides to grow some "flowers" there is next algorithm:[numList]
+[*] If biome is "Hell" or "The End" then -> exit.
+[*]If temperature in range of [b][0; 2][/b]: (0 - almost coldest and 2 - is desert)
+
+-> add to "flowers" list [b]oak[/b] sapling.
+[*]If in [b][-0.5; 0.3][/b] -> add [b]spruce[/b] sapling.
+[*]If in [b][0.6; 0.7][/b] -> add [b]birch[/b] sapling.
+[*]If equal to [b]0.95[/b] -> add [b]jungle[/b] sapling.
+[*]If in [b][1.1; 1.2][/b] or [b]{2.0}[/b] (savana and desert)
+
+-> add [b]acacia[/b] sapling.
+[*]If biome is "Roofed Forest" -> add [b]dark oak[/b] sapling.[/numList]
+The probability to get sapling is static and if there are several saplings in the list then probability divides between them. After that the Random choose "flower" and place this. Notice that there are can be more than one sapling, depending to your luck (or depending to the fothon that striked your CPU and this produced small shift in random numbers generation).[/spoiler]
 
 [header=2]Versions[/header]
 v[i]XXX-YYY[/i] (where [i]X[/i] - minecraft version supported and [i]Y[/i] - version of mod): 
 [list]
+[*]v[i]1.12-0.4[/i] - Now you also can use bone meal on grass block to get a sapling related to the current biome. Added colorize of the wood blocks placed in the desert to dry colors.
 [*]v[i]1.12-0.3[/i] - Dead bush transforms not only to acacia sapling. With different chances it can be - grass or fern. Now, block under the bush replaces by grass block. Water blocks in area of 9x9x2 with dead bush in center increase probability to growing will take effect. Using square root function to better smooth of relation - number of water blocks ~ chance to growing (10 water blocks gets absolute chance). Also water increase chance of getting acacia. Fixed issue - mod logo are not loading.
 [*]v[i]1.12-0.2[/i] - Random check to using bone meal on dead bush, mod description and logo.
 [*]v[i]1.12-0.1[/i] - Using bone meal on dead bush to transform it to the acacia sapling. After that 
