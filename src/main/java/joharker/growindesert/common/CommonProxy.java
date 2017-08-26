@@ -59,6 +59,9 @@ public class CommonProxy
 			if (b.getBiomeName().equals("Roofed Forest"))
 				saplingsToAdd.add(darkOakSapling);
 
+			if (saplingsToAdd.size() == 0)
+				saplingsToAdd.add(oakSapling);
+			
 			int chanceWeight = // Divides chance between all saplings
 					DefaultValues.GRASS_BLOCK.SAPLING_CHANCE_WEIGHT / saplingsToAdd.size();
 			if (chanceWeight == 0)
